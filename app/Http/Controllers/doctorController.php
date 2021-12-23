@@ -59,4 +59,9 @@ class doctorController extends Controller
         return redirect()-> route('myprofile');       
             }
 
+            public function doctorList()
+            {
+                return view('pages.doctor.doctorList');
+            }
+
 }

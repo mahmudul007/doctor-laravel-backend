@@ -26,14 +26,7 @@
 
 
 
-{{-- 
-                    <select name="prescribe" value="{{$patient->prescribe}}">
-                      <option >prescribed</option>
-                     
-                    </select> --}}
-            {{-- <span>Prescribe:</span>
-           
-            <input type="text" name="prescribe" value="{{$patient->prescribe}}" class="form-control"> --}}
+
            
         </div>
 

@@ -14,27 +14,33 @@ class patientController extends Controller
 {
     public function patientList()
     {
-        if(!session()->has('user')){
-            return redirect()->route('doctorLogin');
-           }
+        // if(!session()->has('user')){
+        //     return redirect()->route('doctorLogin');
+        //    }
            
-     $doc_name=session()->get ('user');
+    //  $doc_name=session()->get ('user');
 
 
 
         $patients = DB::table('bookings')
-        ->where('doc_name',$doc_name)
+        // ->where('doc_name',$doc_name)
         ->select('bookings.*')
+        
         ->where('bookings.prescribe', '=', NULL)
        
         ->get();
-    return view ('pages.patient.list')->with('patients',$patients);
+
+        $total=DB::table ('bookings')->count();
+
+       
+        
+    return[ $patients,$total];
     }
     public function prescribed()
     {
-        if(!session()->has('user')){
-            return redirect()->route('doctorLogin');
-           }
+        // if(!session()->has('user')){
+        //     return redirect()->route('doctorLogin');
+        //    }
            
      $doc_name=session()->get ('user');
 
@@ -44,7 +50,7 @@ class patientController extends Controller
         ->select('bookings.*')
         ->where('bookings.prescribe', '!=', NULL)
         ->get();
-        return view ('pages.patient.prescribed')->with('patient',$patient);  
+        return $patient;  
     }
 
 

@@ -31,7 +31,12 @@
           </li>
          @endif
       
-         
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ route('booking') }}">book a doctor</a>
+        </li>
+         <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{{ route('doctorList') }}">doctor list</a>
+        </li>
 
         
         

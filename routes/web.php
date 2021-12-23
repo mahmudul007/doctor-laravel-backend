@@ -17,11 +17,18 @@ Route::get('patient/prescribed',[patientController::class,'prescribed'])->middle
 
 Route::get('/patient/edit/{id}',[bookingController::class,'edit']);
 Route::post('/patient/edit',[bookingController::class,'editSubmit'])->name('patient.edit');
+//book an appointemnt
+
+Route::get('/patient/booking',[bookingController::class,'booking'])->name('booking');
+Route::post('/patient/booking',[bookingController::class,'createSubmit'])->name('createSubmit');
+
+
 //doctor panel
 
 Route::get('/doctor/doctor',[doctorController::class,'doctorLogin'])->name('doctorLogin');
 Route::post('/doctor/doctor',[doctorController::class,'loginSubmit'])->name('loginSubmit');
 Route::get('/doctor/profile',[doctorController::class,'myprofile'])->name('myprofile');
+Route::get('/doctor/doctorList',[doctorController::class,'doctorList'])->name('doctorList');
 
 Route::get('/doctor/editdoc/{id}',[doctorController::class,'editProfile'])->name('editProfile');
 Route::post('/doctor/editdoc',[doctorController::class,'editSubmit'])->name('editSubmit');
